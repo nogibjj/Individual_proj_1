@@ -6,7 +6,7 @@ format:
 
 #checks python files
 lint:
-	pylint --ignore-patterns = test_main.py
+	pylint --ignore-patterns=test_main.*?py *.py
 
 test:
 	python -m pytest -cov=main test_main.py
