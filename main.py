@@ -2,8 +2,7 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
-
-# import markdownify
+import markdownify as md
 from ydata_profiling import ProfileReport
 
 
@@ -32,10 +31,13 @@ def points_plot():
 
 
 def report():
-    "generates report and converts to markdown"
+    "generates report and converts to pdf"
     profile = ProfileReport(df, title="NBA Statistics")
-    profile.to_notebook_iframe()
-    profile.to_file("NBA_report.html")
+    export = profile.to_html()
+    markdown = md.markdownify(export)
+    with open("NBA_report.md", "w") as f:
+        f.write(markdown)
 
 
 points_plot()
+report()
