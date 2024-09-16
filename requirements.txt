@@ -12,7 +12,7 @@ uvicorn == 0.18.3
 
 #math
 pandas
-matplotlib==3.8.4
+matplotlib>=3.5, <3.10
 ydata-profiling
 
 #processing
