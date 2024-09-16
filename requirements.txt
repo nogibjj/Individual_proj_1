@@ -13,4 +13,4 @@ uvicorn == 0.18.3
 #math
 pandas==2.2.2
 matplotlib==3.8.4
-ydata-profiling==4.10.0
+ydata-profiling
