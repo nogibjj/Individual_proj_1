@@ -1,6 +1,6 @@
 """ file for testing code"""
 
-from main import summary, points_plot
+from main import summary, points_plot, report
 
 
 def test_summary():
@@ -14,3 +14,4 @@ def test_plot():
 if __name__ == "__main__":
     test_summary()
     test_plot()
+    report()
