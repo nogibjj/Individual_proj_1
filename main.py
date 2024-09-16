@@ -27,6 +27,7 @@ def points_plot():
     plt.ylabel("PPG")
     plt.title("PPG for Players with higher than 50% 3P%")
     plt.subplots_adjust(bottom=0.43)
+    plt.savefig("NBA_pts_bar.png")
     plt.show()
 
 
