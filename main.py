@@ -35,8 +35,8 @@ def report():
     profile = ProfileReport(df, title="NBA Statistics")
     export = profile.to_html()
     markdown = md.markdownify(export)
-    with open("NBA_report.md", "w") as f:
-        f.write(markdown)
+    with open("NBA_report.md", "w", encoding="utf-8") as f_write:
+        f_write.write(markdown)
 
 
 points_plot()
