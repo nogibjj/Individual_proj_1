@@ -19,7 +19,6 @@ def summary():
 
 def points_plot():
     """provides visualization"""
-    # player_rank = df.select(pl.col("Player"))
     plt.bar(df_3p["Player"], df_3p["PTS"], color="green", width=0.9)
     plt.xticks(rotation="vertical")
     plt.xlabel("Players")
@@ -41,4 +40,3 @@ def report():
 
 points_plot()
 summary()
-# report()
