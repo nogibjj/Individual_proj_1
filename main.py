@@ -1,13 +1,14 @@
 """main file with main functions"""
 
-import pandas as pd
+import polars as pl
 import matplotlib.pyplot as plt
 import markdownify as md
 from ydata_profiling import ProfileReport
 
 
 FILE_PATH = "NBA_24_stats.csv"
-df = pd.read_csv(FILE_PATH)
+df = pl.read_csv(FILE_PATH, ignore_errors=True)
+df_3p = pl.read_csv(FILE_PATH, ignore_errors=True).filter(pl.col("3P%") >= 0.5)
 
 
 def summary():
@@ -18,11 +19,10 @@ def summary():
 
 def points_plot():
     """provides visualization"""
-    accurate = df[df["3P%"] >= 0.5]
-    player_rank = accurate["Player"].astype(str) + ", " + accurate["3P%"].astype(str)
-    plt.bar(player_rank, accurate["PTS"], color="green", width=0.9)
+    # player_rank = df.select(pl.col("Player"))
+    plt.bar(df_3p["Player"], df_3p["PTS"], color="green", width=0.9)
     plt.xticks(rotation="vertical")
-    plt.xlabel("Players and 3P%")
+    plt.xlabel("Players")
     plt.ylabel("PPG")
     plt.title("PPG for Players with higher than 50% 3P%")
     plt.subplots_adjust(bottom=0.43)
@@ -40,4 +40,5 @@ def report():
 
 
 points_plot()
-report()
+summary()
+# report()
