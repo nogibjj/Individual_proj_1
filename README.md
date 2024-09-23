@@ -1,11 +1,11 @@
 # First_project
-Data engineering gitlab template
+Data engineering polars project
 
-[![CI](https://github.com/nogibjj/First_project/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/First_project/actions/workflows/hello.yml)
+[![CI](https://github.com/nogibjj/Individual_proj_1/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Individual_proj_1/actions/workflows/hello.yml)
 
 Requirements
 
-- Python script using Pandass for descriptive statistics
+- Python script using Polars for descriptive statistics
 - Read a dataset (CSV or Excel)
 - Generate summary statistics (mean, median, standard deviation)
 - Create at least one data visualization
@@ -25,7 +25,7 @@ Required Files
     - devcontainer.json
         - contains docker container for python 3 dependencies
 - main.py
-    - contains code to use pandas to read dataset, generate summary statistics and visualization
+    - contains code to use polars to read dataset, generate summary statistics and visualization
 - test_main.py
     - contains code to test main.py file
 - hello.yml
